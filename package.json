@@ -1,0 +1,11 @@
+{
+  "name": "stackup",
+  "version": "0.0.1",
+  "description": "Long stack traces based on async listeners",
+  "main": "longtrace.js",
+  "author": "Jacob Groundwater <groundwater@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "async-listener": "~0.2.2"
+  }
+}
