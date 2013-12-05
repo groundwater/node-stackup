@@ -44,3 +44,5 @@ Error: Something went wrong
 ## Caveats
 
 I haven't really tested this yet.
+
+- it may die horribly if you throw a non-object
