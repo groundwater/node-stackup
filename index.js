@@ -24,14 +24,20 @@ function asyncListener() {
 // the next tone
 var asyncHandlers = {
   before : function before(context, trace) {
-    // the next beginTrace needs to know the current trace
-    activeTrace      = trace;
+    // activeTrace is used above in asyncListener to link child
+    // traces to their parents
+    activeTrace = trace;
+  },
+  error : function error(trace, error) {
+    // replace the short stack with the long stack
+    error.stack = activeTrace.toString(error.stack);
+
+    // do *not* handle the error, let it propagate
+    // chances are things are about to crash, we don't
+    // want to stop that. we just want to provide a better,
+    // longer stack trace
+    return false;
   }
 }
 
 process.addAsyncListener(asyncListener, asyncHandlers);
-
-// when we get an error, format and print the traces in a meaningful way
-process.on('uncaughtException', function onUncaughtException(err) {
-  console.log(activeTrace.toString(err.stack));
-});
