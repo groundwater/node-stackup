@@ -20,12 +20,11 @@ function asyncListener() {
   return TraceModule.NewWithParent(activeTrace, asyncListener);
 }
 
-// the async handler glues to relevant previous stack trace to
-// the next tone
+// the async handler glues the previous stack trace to
+// the next one
 var asyncHandlers = {
   before : function before(context, trace) {
-    // activeTrace is used above in asyncListener to link child
-    // traces to their parents
+    // activeTrace is used to link child traces to their parents
     activeTrace = trace;
   },
   error : function error(trace, error) {
