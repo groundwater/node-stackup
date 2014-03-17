@@ -7,5 +7,24 @@
   "license": "MIT",
   "dependencies": {
     "async-listener": "~0.2.2"
-  }
+  },
+  "devDependencies": {
+    "express": "~3.4.6",
+    "levelup": "~0.18.2",
+    "leveldown": "~0.10.2"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jacobgroundwater/node-stackup.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jacobgroundwater/node-stackup/issues"
+  },
+  "homepage": "https://github.com/jacobgroundwater/node-stackup"
 }
