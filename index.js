@@ -29,7 +29,9 @@ var asyncHandlers = {
   },
   error : function error(trace, error) {
     // replace the short stack with the long stack
-    error.stack = activeTrace.toString(error.stack);
+    if (activeTrace) {
+      error.stack = activeTrace.toString(error.stack);
+    }
 
     // do *not* handle the error, let it propagate
     // chances are things are about to crash, we don't
