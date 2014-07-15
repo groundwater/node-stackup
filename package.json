@@ -1,6 +1,6 @@
 {
   "name": "stackup",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Long stack traces based on async listeners",
   "main": "longtrace.js",
   "author": "Jacob Groundwater <groundwater@gmail.com>",
