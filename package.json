@@ -5,6 +5,10 @@
   "main": "longtrace.js",
   "author": "Jacob Groundwater <groundwater@gmail.com>",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/groundwater/node-stackup.git"
+  },
   "dependencies": {
     "async-listener": "~0.2.2"
   }
