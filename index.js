@@ -1,6 +1,6 @@
 'use strict';
 
-if(!process.addAsyncListener) 
+if(!process.addAsyncListener)
                   require('async-listener');
 var util        = require('util');
 var TraceModule = require('./trace')(Error, __dirname + '/node_modules/async-listener');
@@ -12,17 +12,16 @@ var activeTrace;
 
 // -- async listener -- //
 
-// each time an async event is scheduled, i.e. setImmediate, or
-// process.nextTick, etc. we capture the stack at that exact point
-// this is going to be a crap ton of stack traces, but it will be
-// very accurate!
-function asyncListener() {
-  return TraceModule.NewWithParent(activeTrace, asyncListener);
-}
-
 // the async handler glues the previous stack trace to
 // the next one
 var asyncHandlers = {
+  create : function create() {
+    // each time an async event is scheduled, i.e. setImmediate, or
+    // process.nextTick, etc. we capture the stack at that exact point
+    // this is going to be a crap ton of stack traces, but it will be
+    // very accurate!
+    return TraceModule.NewWithParent(activeTrace, create);
+  },
   before : function before(context, trace) {
     // activeTrace is used to link child traces to their parents
     activeTrace = trace;
@@ -41,4 +40,4 @@ var asyncHandlers = {
   }
 }
 
-process.addAsyncListener(asyncListener, asyncHandlers);
+process.addAsyncListener(asyncHandlers);

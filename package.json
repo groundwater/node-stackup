@@ -6,6 +6,6 @@
   "author": "Jacob Groundwater <groundwater@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "async-listener": "~0.2.2"
+    "async-listener": "~0.4.7"
   }
 }
