@@ -2,8 +2,8 @@
 
 if(!process.addAsyncListener)
                   require('async-listener');
-var util        = require('util');
-var TraceModule = require('./trace')(Error, __dirname + '/node_modules/async-listener');
+var path        = require('path');
+var TraceModule = require('./trace')(Error, path.dirname(require.resolve('async-listener')));
 
 Error.stackTraceLimit = Infinity;
 
