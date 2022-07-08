@@ -1,6 +1,6 @@
 {
   "name": "stackup",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Long stack traces based on async listeners",
   "main": "longtrace.js",
   "author": "Jacob Groundwater <groundwater@gmail.com>",
@@ -10,6 +10,6 @@
     "url": "git://github.com/groundwater/node-stackup.git"
   },
   "dependencies": {
-    "async-listener": "~0.4.7"
+    "async-listener": "~0.6.10"
   }
 }
